@@ -28,3 +28,10 @@ The project solution in the git repository is constructed with the following fol
     this folder contains terraform files and modules for creating RDS MySQL database,
     the folder should also maintain the .sql scripts for creating the database tables.
 </pre>
+
+### LINES_COUNTER
+<pre>
+this folder consists terraform files used to create and deploy
+anything related to the lines counter application (S3 bucket and objects in it, lambda, python code,
+firewall definitions and more)
+</pre>

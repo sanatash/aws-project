@@ -1,11 +1,13 @@
 
 module "rds_db_instance" {
   source  = "registry.terraform.io/terraform-aws-modules/rds/aws//modules/db_instance"
-  version = "5.9.0"
+  engine_version = "8.0"
+#  version = "5.9.0"
   identifier = "mysqldb"
   instance_class = "db.t3.micro"
   engine = "mysql"
-  publicly_accessible = false
+  allocated_storage = "5"
+  publicly_accessible = true
   #db_subnet_group_name = ""
   db_name = var.db_name
   username = var.user_name
