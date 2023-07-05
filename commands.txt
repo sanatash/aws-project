@@ -1,3 +1,17 @@
 # Run terraform init from every module
 cd .\DATABASE\terraform\modules\rds\
 terraform init
+
+How to build zip file for AWS lambda function:
+1. zip file should be build on Linux machine, so run Ubuntu machine on your Windows
+2. install and open WinScp application on the Windows
+3. For transferring data from Windows to Ubuntu using WinScp do next steps:
+Install OpenSSH server and client on your Ubuntu machine:  sudo apt-get install openssh-server openssh-client
+4. Check Ubuntu IP address with ifconfig command: your IP address will ne inet address in command output
+5. Open new tab in WinScp and connect to Ubuntu machine with given Ip addrees, user and password
+6. create library "package" on Ubuntu machine
+7. Copy there your lines_counter.py python file with lambda function
+8. Copy there all additional python packages that were additionally installed for your lambda function:
+find them in your venv/Lib/site-packages of your python project, for example: pymysql/ dir
+9. Go to your Ubuntu terminal and cd to package directory. Run from there:  zip -r ../lines_counter.zip .
+10. After zip file was created on your Ubuntu machine, you can copy it to your Windows machine by WinScp
